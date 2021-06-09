@@ -1,0 +1,3 @@
+ip6tables-firewall.sh iptables-firewall.sh /usr/lib/iptables-firewall/
+iptables-firewall /etc/iptables-firewall/
+update-iptables-firewall /usr/sbin/
