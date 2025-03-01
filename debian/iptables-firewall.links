@@ -1,0 +1,2 @@
+/usr/share/doc/iptables-firewall/examples/scripts/ip6tables-firewall.sh /usr/lib/iptables-firewall/script6
+/usr/share/doc/iptables-firewall/examples/scripts/iptables-firewall.sh /usr/lib/iptables-firewall/script
