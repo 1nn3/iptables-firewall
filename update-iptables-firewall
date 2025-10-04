@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+set -x
+set -e
+
+# IPv4
+if test -x /usr/local/sbin/iptables-firewall; then
+	/usr/local/sbin/iptables-firewall
+else
+	/usr/lib/iptables-firewall/script
+fi
+
+# IPv6
+if test -x /usr/local/sbin/ip6tables-firewall; then
+	/usr/local/sbin/ip6tables-firewall
+else
+	/usr/lib/iptables-firewall/script6
+fi
+
+# Aktuelles Regelwerk speichern - Siehe netfilter-persistent(8)
+service netfilter-persistent save
+
