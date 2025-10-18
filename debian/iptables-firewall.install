@@ -1,0 +1,4 @@
+check-tor-is-working /usr/bin/
+config /etc/iptables-firewall/
+scripts /usr/share/iptables-firewall/
+update-iptables-firewall /usr/sbin/

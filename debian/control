@@ -1,0 +1,21 @@
+Source: iptables-firewall
+Section: net
+Priority: optional
+Maintainer: user <user@host>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+
+Package: iptables-firewall
+Architecture: all
+Pre-Depends: debconf (>= 0.2.17)
+Depends: iptables,
+         iptables-persistent,
+         libjson-perl,
+         libwww-perl,
+         ${misc:Depends}
+Recommends: tor
+Suggests: iptables-optimizer
+Description: Einfache Firewall mit iptables (Kofler firewall).
+ Das Skript ähnelt der Firewall aus dem Buch Linux - Das umfassende
+ Handbuch von Michael Kofler. Es ist eine sehr einfach gehaltene, aber
+ effektive Implementierung einer Firewall.
