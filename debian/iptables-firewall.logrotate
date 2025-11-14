@@ -1,0 +1,11 @@
+/var/log/iptables-firewall.log {
+	weekly
+	rotate 4
+	compress
+	delaycompress
+	missingok
+	notifempty
+	create 0640 root adm
+	sharedscripts
+}
+

@@ -1,0 +1,45 @@
+iptables-firewall - Einfache Firewall mit iptables (Kofler firewall)
+Topics: firewall iptables tor iptables-rules iptables-firewall
+
+Dieses Skript ähnelt der Firewall aus dem Buch Linux - Das umfassende
+Handbuch von Michael Kofler. Es ist eine sehr einfach gehaltene, aber
+effektive Implementierung einer Firewall.
+
+Umgesetzt ist das grundlegende Blockieren aller Versuche sich mit
+dem Host zu Verbinden. Nur Verbindungen auf interne Anfragen werden
+erlaubt. D.h. die Einbindung ins lokale Netz (Datei- und Druckerfreigabe),
+aktives FTP, P2P usw. wird zusätzliche Konfiguration, erfordern,
+die hier nur eingeschränkt geboten wird (Internetsurfen und E-Mail
+funktioniert ohne Probleme).
+
+* eingehende Verbindungen werden geblockt
+* ausgehende Verbindungen sind erlaubt für TCP, UPD und ICMP
+* das loopback Interface lo, die IPs für Localhost und Localnet und
+  die UID und GID 0/root ist immer erlaubt
+
+Dateien und Konfiguration
+
+Die Firewall besteht im Grund aus 3 Teilen: Dem
+Regelwerk iptables-firewall.sh und ip6tables-firewall.sh in
+/usr/lib/iptables-firewall/ bzw. dem Pendant unter /usr/local und der
+Konfiguration /etc/iptables-firewall/config, welche einige
+Variablen setzt. Sowie dem Wrapper /usr/sbin/update-iptables-firewall,
+welcher die obigen Skripte ausführt.
+
+Ports freigeben
+
+Sollen Ports für eingehende Verbindungen geöffnet werden, kann dies
+in /etc/iptables-firewall/config konfiguriert werden. Auch
+können ausgehende Verbindungen limitiert werden und z.B. nur Port von
+verschlüsselten Protokollen wie HTTPS, IMAPS, SSH usw. erlaubt werden.
+
+Anhang
+
+Eine Firewall mit NAT/Masquerading, Routing usw. zu konfigurieren
+benötigt Fachwissen. Das Wissen zum netfilter.org Projekt wird
+vorausgesetzt. Siehe dazu auch http://www.netfilter.org.
+
+Der GNU/Linux Kernel benutzt seit Version 2.4 iptables, um
+Firewall-Funktionalität zur Verfügung zu stellen und auch nach
+Einführung von nftables als Nachfolger, wird iptables noch lange Zeit
+verfügbar bleiben.

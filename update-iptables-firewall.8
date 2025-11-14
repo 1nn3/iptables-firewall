@@ -1,0 +1,26 @@
+.\" Manpage for update-iptables-firewall by user <user@host>
+
+.TH "update-iptables-firewall" "1" "2013-12-04" "user" "iptables-firewall"
+
+.SH NAME
+
+update-iptables-firewall - Aktualisiert das Regelwerk
+
+.SH SYNOPSIS
+
+.nf
+update-iptables-firewall
+
+.SH DESCRIPTION
+
+Aktualisiert die Regeln u.a. anhand der Datei iptables-firewall(5).
+
+.SH FILES
+
+.SS /usr/local/sbin/iptables-firewall, /usr/local/sbin/ip6tables-firewall
+
+Exsistieren diese Dateien, überschreiben diese die entsprechenden
+Regeln in /usr/lib/iptables-firewall/.
+
+NOTE: Beachte ob iptables-optimizer(8) läuft/installiert ist!
+

@@ -1,0 +1,32 @@
+# This is a POSIX shell fragment
+#
+# Nach dem bearbeiten muss update-iptables-firewall(8) ausgeführt werden,
+# um die Änderungen zu übernehmen.
+
+# gateway interface for examples/iptables-router.sh
+#gateway_interfaces=ppp+
+
+# Erlaube eingehende Verbindungen an folgenden Interface
+#listen_interfaces="vboxnet0"
+# Erlaube eingehende Verbindungen an folgenden Ports
+#listen_ports_tcp="53"
+# Allow SSH
+#listen_ports_tcp="$listen_ports_tcp,22"
+#listen_ports_udp="53,67:68"
+
+# Erlaube ausgehende Verbindungen nur auf Ports, deren Protokolle
+# standardmäßig verschlüsselt sind
+#output_ports_tcp="22,443,465,993,995,1194,6697,5222"
+#output_ports_udp="1194,5222"
+
+# Erlaube alle ausgehenden Verbindungen für folgenden Protokolle
+output_protocols="icmp"
+
+# Erlaube alle ausgehenden Verbindungen für folgenden UIDs und GIDs
+output_users="_apt"
+output_groups=""
+# TOR
+#output_users="user root"
+#output_groups=""
+#ignore_users="_apt"
+

@@ -1,0 +1,6 @@
+Template: iptables-firewall/script
+Type: select
+Default: firewall
+Choices: default, firewall, tor, router, transparent-proxy
+Description: Wich iptables script to use?
+ The iptables script to use.
